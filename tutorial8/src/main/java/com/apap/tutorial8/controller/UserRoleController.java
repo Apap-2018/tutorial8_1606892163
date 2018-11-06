@@ -3,10 +3,6 @@ package com.apap.tutorial8.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.apap.tutorial8.model.UserRoleModel;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,5 +19,11 @@ public class UserRoleController {
 	private String addUserSubmit(@ModelAttribute UserRoleModel user) {
 		userService.addUser(user);
 		return "home";
+	}
+	
+	@RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
+	public String  update(@ModelAttribute UserRoleModel user) {
+		userService.updatePassword(user);
+		return "update-password";
 	}
 }

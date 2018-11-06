@@ -19,6 +19,12 @@ public class UserRoleServiceImpl implements UserRoleService {
 		return userDb.save(user);
 	}
 	
+	// buat method untuk update
+	@Override
+	public UserRoleModel updatePassword(UserRoleModel user) {
+		return userDb.save(user);
+	}
+	
 	@Override
 	public String encrypt(String password) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
