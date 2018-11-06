@@ -2,6 +2,7 @@ package com.apap.tutorial8.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.apap.tutorial8.model.UserRoleModel;
@@ -19,10 +20,12 @@ public class UserRoleServiceImpl implements UserRoleService {
 		return userDb.save(user);
 	}
 	
-	// buat method untuk update
 	@Override
-	public UserRoleModel updatePassword(UserRoleModel user) {
-		return userDb.save(user);
+	public void updatePassword(String username, String newPass) {
+		UserRoleModel user = getByUsername(username);
+		String pass = encrypt(newPass);
+		user.setPassword(pass);
+		userDb.save(user);
 	}
 	
 	@Override
@@ -30,5 +33,18 @@ public class UserRoleServiceImpl implements UserRoleService {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		String hashedPassword = passwordEncoder.encode(password);
 		return hashedPassword;
+	}
+	
+	@Override
+	public UserRoleModel getByUsername(String username) {
+		return userDb.findByUsername(username);
+	}
+	
+	@Override
+	public Boolean checkPassIsValid(String username, String password) {
+		UserRoleModel user = getByUsername(username);
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		
+		return passwordEncoder.matches(password, user.getPassword());
 	}
 }

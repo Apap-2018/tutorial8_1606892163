@@ -89,6 +89,7 @@
         						<input id="oldPass" class="col-sm-8 form-control input-sm" type="password" name="oldPass" 
         						pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" title="Must contain at least one number 
         						and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+        						<span id="msgOldPass" style="color:red; display:none;"> Password Lama salah!</span>
         					</div>
         					<div class="row form-group">
         						<label class="col-sm-4"> Password Baru: </label>
@@ -150,6 +151,44 @@
 	    		console.log("false");
 	    	}
 	    };
+	    /*
+	    $('#oldPass').change(function(){
+	    	$.ajax({
+	    		url : "/user/checkOldPass",
+	    		success : function(data) {
+	    			if (data == true) {
+	    				$('#msgOldPass').hide();
+	    				console.log("VALID");
+	    			}
+	    			else {
+	    				$('#msgOldPass').show();
+	    				console.log("INVALID");
+	    			}
+	    		}
+	    	});
+	    });
+	    */
+	    /*
+	    $('#oldPass').change(
+	    	function() {
+	    		$.ajax({
+	    			method : 'GET',
+	    			url : "/user/checkOldPass",
+	    			data : {oldPass : $(this).val()}
+	    		}).done(function(data){
+	    			if (data == true) {
+	    				$('#msgOldPass').hide();
+	    				console.log("VALID");
+	    			}
+	    			else {
+	    				$('#msgOldPass').show();
+	    				console.log("INVALID");
+	    			}
+	    		});
+	    	}		
+	    ); 
+	    */
+	    
     </script>
 </body>
 </html>
