@@ -1,8 +1,8 @@
-package com.apap.tutorial6.service;
+package com.apap.tutorial8.service;
 
 import java.util.Optional;
 
-import com.apap.tutorial6.model.DealerModel;
+import com.apap.tutorial8.model.DealerModel;
 
 /**
  * DealerService

@@ -1,11 +1,11 @@
-package com.apap.tutorial6.controller;
+package com.apap.tutorial8.controller;
 
 import java.util.List;
 
-import com.apap.tutorial6.model.CarModel;
-import com.apap.tutorial6.model.DealerModel;
-import com.apap.tutorial6.service.CarService;
-import com.apap.tutorial6.service.DealerService;
+import com.apap.tutorial8.model.CarModel;
+import com.apap.tutorial8.model.DealerModel;
+import com.apap.tutorial8.service.CarService;
+import com.apap.tutorial8.service.DealerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +27,7 @@ public class DealerController {
     @Autowired
     private CarService carService;
 
-    @RequestMapping("/")
+   
     private String home() {
         return "home";
     }

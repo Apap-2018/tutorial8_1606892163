@@ -1,9 +1,9 @@
-package com.apap.tutorial6.service;
+package com.apap.tutorial8.service;
 
 import java.util.Optional;
 
-import com.apap.tutorial6.model.DealerModel;
-import com.apap.tutorial6.repository.DealerDb;
+import com.apap.tutorial8.model.DealerModel;
+import com.apap.tutorial8.repository.DealerDb;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

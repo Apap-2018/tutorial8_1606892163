@@ -1,9 +1,9 @@
-package com.apap.tutorial6.repository;
-
-import com.apap.tutorial6.model.DealerModel;
+package com.apap.tutorial8.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.apap.tutorial8.model.DealerModel;
 
 /**
  * DealerDb
